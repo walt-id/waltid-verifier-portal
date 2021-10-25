@@ -55,5 +55,8 @@ export default {
   build: {
   },
 
-  ssr: false
+  ssr: false,
+  server: {
+    port: 4000
+  }
 }
