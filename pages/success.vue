@@ -85,7 +85,7 @@
 
 <script>
 if (window.opener != null) {
-  window.opener.location = '/success'
+  window.opener.location = '/success/'
   window.close()
 }
 export default {
