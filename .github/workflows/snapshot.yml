@@ -1,4 +1,4 @@
-name: CI/CD Workflow for Walt.ID Verifier Portal
+name: Snapshot release workflow for Walt.ID Verifier Portal
 
 on:
   push:
