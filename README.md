@@ -1,5 +1,7 @@
 # waltid-verifier-portal
 
+[![CI/CD Workflow for Walt.ID Verifier Portal](https://github.com/walt-id/waltid-verifier-portal/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/walt-id/waltid-verifier-portal/actions/workflows/ci.yml)
+
 ## Build Setup
 
 ```bash
