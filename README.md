@@ -2,6 +2,26 @@
 
 [![CI/CD Workflow for Walt.ID Verifier Portal](https://github.com/walt-id/waltid-verifier-portal/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/walt-id/waltid-verifier-portal/actions/workflows/ci.yml)
 
+A simple reference implementation for a Verifier Portal, leveraging the verifier backend API implemented in: https://github.com/walt-id/waltid-wallet-backend
+
+## Verifier backend connection
+
+###### Development
+
+The verifier backend for development purposes, can be defined in the `nuxt.config.js` file, like so:
+```
+proxy: {
+"/verifier-api/": "http://localhost:8080"
+}
+```
+
+###### Production
+
+In a production environment it is recommended to set up the backend and frontend using an ingress router or API gateway.
+For an example, see the docker-compose setup in:
+
+https://github.com/walt-id/waltid-wallet-backend
+
 ## Build Setup
 
 ```bash
