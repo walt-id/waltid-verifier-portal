@@ -78,11 +78,11 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">
-              Open a bank account
+              Entry into <i>Your Country</i> and pre-travel clearance
             </h1>
             <p class="lead text-muted">
-              Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so
-              folks don’t simply skip over it entirely.
+              For entry into the country, a current PCR test or evidence of vaccination or recovery from COVID-19 is required.
+              Present your Vaccination Certificate in order to proof your vaccination status.
             </p>
             <p>
               <a
@@ -90,7 +90,7 @@
                 class="btn btn-primary my-2"
                 @click="createPopupWin('/verifier-api/present/vid?walletId='+wallets[0].id, wallets[0].description, 500, 700)"
               >Apply with {{ wallets[0].id }} - POPUP</a>
-              <br><br>
+            <br></br><br></br>
               <a :href="'/verifier-api/present/vid?walletId='+wallets[0].id" class="btn btn-primary my-2">Apply with {{ wallets[0].id }} - LINK</a>
             </p>
           </div>
