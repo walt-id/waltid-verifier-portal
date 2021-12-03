@@ -88,10 +88,10 @@
               <a
                 href="#"
                 class="btn btn-primary my-2"
-                @click="createPopupWin('/verifier-api/present/vid?walletId='+wallets[0].id, wallets[0].description, 500, 700)"
+                @click="createPopupWin('/verifier-api/present/VerifiableVaccinationCertificate?walletId='+wallets[0].id, wallets[0].description, 500, 700)"
               >Apply with {{ wallets[0].id }} - POPUP</a>
             <br></br><br></br>
-              <a :href="'/verifier-api/present/vid?walletId='+wallets[0].id" class="btn btn-primary my-2">Apply with {{ wallets[0].id }} - LINK</a>
+              <a :href="'/verifier-api/present/VerifiableVaccinationCertificate?walletId='+wallets[0].id" class="btn btn-primary my-2">Apply with {{ wallets[0].id }} - LINK</a>
             </p>
           </div>
         </div>
