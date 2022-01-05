@@ -67,12 +67,10 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">
-              Welcome to your bank account
+              Your vaccination status has been validated and cleared. You are welcome to enter <i>Your Contry</i>
             </h1>
             <p class="lead text-muted">
-              Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so
-              folks don’t simply skip over it entirely.
-            </p>
+              The W2C Verifiable Credential complient Vaccination Certifcate was received, processed and validated. The data, format, signature and chain of trust was validated.</p>
             <p>
             <!--                    <a href="#" class="btn btn-primary my-2">Login with SSI</a>-->
             </p>

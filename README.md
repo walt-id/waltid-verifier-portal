@@ -22,6 +22,10 @@ For an example, see the docker-compose setup in:
 
 https://github.com/walt-id/waltid-wallet-backend
 
+## Building Docker image
+
+  docker build --rm -t waltid-verifier .
+
 ## Build Setup
 
 ### Using Docker
