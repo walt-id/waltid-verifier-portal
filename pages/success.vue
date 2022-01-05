@@ -65,15 +65,32 @@
     <main>
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
+          <div v-if="result.valid" class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">
-              Your vaccination status has been validated and cleared. You are welcome to enter <i>Your Contry</i>
+              Welcome to your bank account
             </h1>
             <p class="lead text-muted">
-              The W2C Verifiable Credential complient Vaccination Certifcate was received, processed and validated. The data, format, signature and chain of trust was validated.</p>
+              Your Verifiable ID credential has been verified.
+            </p>
+            <h2>Protected account details:</h2>
+            <p>{{ protectedData }}</p>
             <p>
             <!--                    <a href="#" class="btn btn-primary my-2">Login with SSI</a>-->
             </p>
+          </div>
+          <div v-if="!result.valid">
+            <em class="fw-light">
+              Verifiable ID credential could not be verified!
+            </em>
+          </div>
+          <p></p>
+          <div>
+            <h3 class="fw-light">Verification result</h3>
+            <div>Verified: {{ result.valid }}</div>
+            <div>Subject DID: {{ result.subject }}</div>
+            <div>Verification req.: {{ result.request ? result.request.nonce : 'None' }}</div>
+            <div>ID token valid: {{ result.id_token }}</div>
+            <div>VP token valid: {{ result.vp_token }}</div>
           </div>
         </div>
       </section>
@@ -83,11 +100,34 @@
 
 <script>
 if (window.opener != null) {
-  window.opener.location = '/success/'
+  window.opener.location = window.location
   window.close()
 }
 export default {
-  name: 'success.vue'
+  name: 'success.vue',
+  async asyncData ({ $axios, route }) {
+    console.log(route.query.access_token)
+    let result = {}
+    let protectedData = ''
+    if (route.query.access_token != null) {
+      await $axios.get('/verifier-api/auth?access_token=' + route.query.access_token)
+        .then((response) => {
+          result = response.data
+          return $axios.get('/verifier-api/protected', {
+            headers: {
+              Authorization: 'Bearer ' + result.auth_token
+            }
+          })
+        })
+        .then((dataResponse) => {
+          protectedData = dataResponse.data
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+    return { result, protectedData }
+  }
 }
 </script>
 

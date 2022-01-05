@@ -78,20 +78,19 @@
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">
-              Entry into <i>Your Country</i> and pre-travel clearance
+              Open a bank account
             </h1>
             <p class="lead text-muted">
-              For entry into the country, a current PCR test or evidence of vaccination or recovery from COVID-19 is required.
-              Present your Vaccination Certificate in order to proof your vaccination status.
+              To open a bank account please present your Verifiable ID credential.
             </p>
             <p>
               <a
                 href="#"
                 class="btn btn-primary my-2"
-                @click="createPopupWin('/verifier-api/present/VerifiableVaccinationCertificate?walletId='+wallets[0].id, wallets[0].description, 500, 700)"
+                @click="createPopupWin('/verifier-api/present/?walletId=' + wallets[0].id + '&schemaUri=' + schemaUri, wallets[0].description, 500, 700)"
               >Apply with {{ wallets[0].id }} - POPUP</a>
-            <br></br><br></br>
-              <a :href="'/verifier-api/present/VerifiableVaccinationCertificate?walletId='+wallets[0].id" class="btn btn-primary my-2">Apply with {{ wallets[0].id }} - LINK</a>
+            <br /><br />
+              <a :href="'/verifier-api/present/?walletId=' + wallets[0].id + '&schemaUri=' + schemaUri" class="btn btn-primary my-2">Apply with {{ wallets[0].id }} - LINK</a>
             </p>
           </div>
         </div>
@@ -108,6 +107,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      schemaUri: 'https://api.preprod.ebsi.eu/trusted-schemas-registry/v1/schemas/0x2488fd38783d65e4fd46e7889eb113743334dbc772b05df382b8eadce763101b'
+    }
+  },
   async asyncData ({ $axios }) {
     const wallets = await $axios.$get('/verifier-api/wallets/list')
     return { wallets }
