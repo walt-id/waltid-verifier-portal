@@ -28,6 +28,11 @@ https://github.com/walt-id/waltid-wallet-backend
 
 ## Build Setup
 
+### Using Docker
+    docker build -t waltid/ssikit-verifier-portal .
+
+### Using Node (for development)
+
 ```bash
 # install dependencies
 $ yarn install
