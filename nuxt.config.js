@@ -18,12 +18,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "@/assets/css/bootstrap-icons.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/bootstrap',
-    '@/plugins/bootstrap-script'
+    '@/plugins/bootstrap-script',
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,11 +52,25 @@ export default {
   },
 
   proxy: {
-    '/verifier-api/': 'http://localhost:8080'
+    '/verifier-api/': 'https://wallet.waltid.org'
   },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, ctx) {
+      if (ctx.dev && ctx.isClient) {
+          config.module.rules.push({
+              enforce : 'pre',
+              test    : /\.(js|vue)$/,
+              loader  : 'eslint-loader',
+              exclude : /(node_modules)/,
+              options : {
+                  fix : true
+              }
+          });
+      }
+  }
   },
 
   ssr: false,

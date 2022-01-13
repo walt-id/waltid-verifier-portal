@@ -84,36 +84,12 @@
     </main>
 </template>
 
-
 <script>
-if (window.opener != null) {
-  window.opener.location = window.location
-  window.close()
-}
 export default {
-  name: 'success.vue',
-  async asyncData ({ $axios, route }) {
-    console.log(route.query.access_token)
-    let result = {}
-    let protectedData = ''
-    if (route.query.access_token != null) {
-      await $axios.get('/verifier-api/auth?access_token=' + route.query.access_token)
-        .then((response) => {
-          result = response.data
-          return $axios.get('/verifier-api/protected', {
-            headers: {
-              Authorization: 'Bearer ' + result.auth_token
-            }
-          })
-        })
-        .then((dataResponse) => {
-          protectedData = dataResponse.data
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+  data () {
+    return {
+      schemaUri: 'https://api.preprod.ebsi.eu/trusted-schemas-registry/v1/schemas/0x2488fd38783d65e4fd46e7889eb113743334dbc772b05df382b8eadce763101b'
     }
-    return { result, protectedData }
   }
 }
 </script>
