@@ -99,9 +99,8 @@ export default {
     if (route.query.access_token != null) {
       await $axios.get('/verifier-api/auth?access_token=' + route.query.access_token)
         .then((response) => {
-          result = response.data
-          console.log('response.data')
-          console.log(response.data)
+          result = JSON.parse(response.data)
+          console.log(JSON.parse(response.data))
           return $axios.get('/verifier-api/protected', {
             headers: {
               Authorization: 'Bearer ' + result.auth_token
@@ -109,8 +108,6 @@ export default {
           })
         })
         .then((dataResponse) => {
-          console.log('dataResponse.data')
-          console.log(dataResponse.data)
           protectedData = JSON.parse(dataResponse.data)
         })
         .catch((error) => {
