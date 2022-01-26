@@ -10,15 +10,15 @@
             <h2 class="fw-bold">
               presented credentials.
             </h2>
-            <div class="accordion my-2" id="accordion1" v-for="data in protectedData.vp_token.verifiableCredential" v-bind:key="data.id">
+            <div class="accordion my-2" id="accordion1" v-for="data in result.vp_token.verifiableCredential" v-bind:key="data.id">
               <div class="accordion-item">
-                <h2 class="accordion-header" :id="'heading'+protectedData.vp_token.verifiableCredential.indexOf(data)">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)" aria-expanded="false" :aria-controls="'collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)">
+                <h2 class="accordion-header" :id="'heading'+result.vp_token.verifiableCredential.indexOf(data)">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+result.vp_token.verifiableCredential.indexOf(data)" aria-expanded="false" :aria-controls="'collapse'+result.vp_token.verifiableCredential.indexOf(data)">
                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
                     {{data.type[data.type.length-1]}}
                   </button>
                 </h2>
-                <div :id="'collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)" class="accordion-collapse collapse" :aria-labelledby="'heading'+protectedData.vp_token.verifiableCredential.indexOf(data)" data-bs-parent="#accordionExample">
+                <div :id="'collapse'+result.vp_token.verifiableCredential.indexOf(data)" class="accordion-collapse collapse" :aria-labelledby="'heading'+result.vp_token.verifiableCredential.indexOf(data)" data-bs-parent="#accordionExample">
                   <div class="accordion-body text-start">
                     <span>
                       <i class="bi bi-check"></i>
