@@ -10,56 +10,56 @@
             <h2 class="fw-bold">
               presented credentials.
             </h2>
-            <div class="accordion mt-4" id="accordion1">
+            <div class="accordion my-2" id="accordion1" v-for="data in protectedData.vp_token.verifiableCredential" v-bind:key="data.id">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                    [Credential name]
+                <h2 class="accordion-header" :id="'heading'+protectedData.vp_token.verifiableCredential.indexOf(data)">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)" aria-expanded="false" :aria-controls="'collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)">
+                     <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                    {{data.type[data.type.length-1]}}
                   </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div :id="'collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)" class="accordion-collapse collapse" :aria-labelledby="'heading'+protectedData.vp_token.verifiableCredential.indexOf(data)" data-bs-parent="#accordionExample">
                   <div class="accordion-body text-start">
                     <span>
                       <i class="bi bi-check"></i>
-                      issuer
+                      Family Name: {{data.credentialSubject.familyName}}
                     </span>
                     <br>
                     <span>
                       <i class="bi bi-check"></i>
-                      Signertures
-                    </span>
-                    <br>
-                    <span>
-                     <a href="#" class="text-dark">View credential</a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion my-2" id="accordion1">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <i class="bi bi-x-circle-fill me-2 text-muted"></i>
-                    [Credential name]
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-start">
-                    <span>
-                      <i class="bi bi-check"></i>
-                      issuer
+                      First Name: {{data.credentialSubject.firstName}}
                     </span>
                     <br>
                     <span>
                       <i class="bi bi-check"></i>
-                      Signertures
+                       Date Of Birth: {{data.credentialSubject.dateOfBirth}}
                     </span>
                     <br>
                     <span>
-                     <a href="#" class="text-dark">View credential</a>
+                      <i class="bi bi-check"></i>
+                      Personal Identifier: {{data.credentialSubject.personalIdentifier}}
                     </span>
+                    <br>
+                    <span>
+                      <i class="bi bi-check"></i>
+                      Name At Birth: {{data.credentialSubject.nameAndFamilyNameAtBirth}}
+                    </span>
+                    <br>
+                    <span>
+                      <i class="bi bi-check"></i>
+                      Place Of Birth: {{data.credentialSubject.placeOfBirth}}
+                    </span>
+                    <br>
+                    <span>
+                      <i class="bi bi-check"></i>
+                      Current Address: {{data.credentialSubject.currentAddress}}
+                    </span>
+                    <br>
+                    <span>
+                      <i class="bi bi-check"></i>
+                      Gender: {{data.credentialSubject.gender}}
+                    </span>
+
                   </div>
                 </div>
               </div>

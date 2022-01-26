@@ -1,0 +1,114 @@
+{
+    "vp_token": {
+        "context": ["https://www.w3.org/2018/credentials/v1"],
+        "id": "urn:uuid:e394bd68-80d2-4f5d-b9de-e0d317932909",
+        "holder": "did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p",
+        "verifiableCredential": [{
+            "context": [
+                "https://www.w3.org/2018/credentials/v1"
+            ],
+            "id": "identity#VerifiableId#b97d1435-4f8d-4bd9-aaa3-4f407bdf6794",
+            "issuer": "did:key:z6MktSzJ2iEpSH2SZ8qhBNkyDNNJdr1gCznaEf5tRLiCMQoN",
+            "issuanceDate": "2022-01-25T16:15:35.776314851Z",
+            "validFrom": "2022-01-25T16:15:35.776320030Z",
+            "expirationDate": null,
+            "credentialSubject": {
+                "id": "did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p",
+                "familyName": "DOE",
+                "firstName": "Jane",
+                "dateOfBirth": "1993-04-08",
+                "personalIdentifier": "0904008084H",
+                "nameAndFamilyNameAtBirth": "Jane DOE",
+                "placeOfBirth": "LILLE, FRANCE",
+                "currentAddress": "1 Boulevard de la Liberté, 59800 Lille",
+                "gender": "FEMALE"
+            },
+            "credentialStatus": null,
+            "credentialSchema": {
+                "id": "https://api.preprod.ebsi.eu/trusted-schemas-registry/v1/schemas/0x2488fd38783d65e4fd46e7889eb113743334dbc772b05df382b8eadce763101b",
+                "type": "JsonSchemaValidator2018"
+            },
+            "evidence": {
+                "id": null,
+                "type": [
+                    "DocumentVerification"
+                ],
+                "verifier": "did:ebsi:2A9BZ9SUe6BatacSpvs1V5CdjHvLpQ7bEsi2Jb6LdHKnQxaN",
+                "evidenceDocument": [
+                    "Passport"
+                ],
+                "subjectPresence": "Physical",
+                "documentPresence": [
+                    "Physical"
+                ]
+            },
+            "proof": {
+                "type": "Ed25519Signature2018",
+                "creator": "did:key:z6MktSzJ2iEpSH2SZ8qhBNkyDNNJdr1gCznaEf5tRLiCMQoN",
+                "created": "2022-01-25T16:15:35Z",
+                "domain": "https://api.preprod.ebsi.eu",
+                "proofPurpose": null,
+                "verificationMethod": null,
+                "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..MDp_eJgqtSsjCJEOkzNKy_TQ83TzjPrSkEAGmMBhikJt03VMiDgz-n3jf3P0WjZ0Ap3yHs4zZfo-cryZuayQCg",
+                "nonce": "d2366e33-feb3-4cdf-be5f-ef5f07465588"
+            },
+            "json": "{\"@context\":[\"https://www.w3.org/2018/credentials/v1\"],\"credentialSchema\":{\"id\":\"https://api.preprod.ebsi.eu/trusted-schemas-registry/v1/schemas/0x2488fd38783d65e4fd46e7889eb113743334dbc772b05df382b8eadce763101b\",\"type\":\"JsonSchemaValidator2018\"},\"credentialSubject\":{\"currentAddress\":\"1 Boulevard de la Liberté, 59800 Lille\",\"dateOfBirth\":\"1993-04-08\",\"familyName\":\"DOE\",\"firstName\":\"Jane\",\"gender\":\"FEMALE\",\"id\":\"did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p\",\"nameAndFamilyNameAtBirth\":\"Jane DOE\",\"personalIdentifier\":\"0904008084H\",\"placeOfBirth\":\"LILLE, FRANCE\"},\"evidence\":{\"documentPresence\":[\"Physical\"],\"evidenceDocument\":[\"Passport\"],\"subjectPresence\":\"Physical\",\"type\":[\"DocumentVerification\"],\"verifier\":\"did:ebsi:2A9BZ9SUe6BatacSpvs1V5CdjHvLpQ7bEsi2Jb6LdHKnQxaN\"},\"id\":\"identity#VerifiableId#b97d1435-4f8d-4bd9-aaa3-4f407bdf6794\",\"issuanceDate\":\"2022-01-25T16:15:35.776314851Z\",\"issuer\":\"did:key:z6MktSzJ2iEpSH2SZ8qhBNkyDNNJdr1gCznaEf5tRLiCMQoN\",\"proof\":{\"created\":\"2022-01-25T16:15:35Z\",\"creator\":\"did:key:z6MktSzJ2iEpSH2SZ8qhBNkyDNNJdr1gCznaEf5tRLiCMQoN\",\"domain\":\"https://api.preprod.ebsi.eu\",\"jws\":\"eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..MDp_eJgqtSsjCJEOkzNKy_TQ83TzjPrSkEAGmMBhikJt03VMiDgz-n3jf3P0WjZ0Ap3yHs4zZfo-cryZuayQCg\",\"nonce\":\"d2366e33-feb3-4cdf-be5f-ef5f07465588\",\"type\":\"Ed25519Signature2018\"},\"validFrom\":\"2022-01-25T16:15:35.776320030Z\",\"type\":[\"VerifiableCredential\",\"VerifiableAttestation\",\"VerifiableId\"]}",
+            "dateFormat": {
+                "locale": "en_US",
+                "decimalStyle": {
+                    "zeroDigit": "0",
+                    "positiveSign": "+",
+                    "negativeSign": "-",
+                    "decimalSeparator": "."
+                },
+                "resolverStyle": "STRICT",
+                "resolverFields": null,
+                "zone": null,
+                "chronology": null
+            },
+            "jwt": null,
+            "type": [
+                "VerifiableCredential",
+                "VerifiableAttestation",
+                "VerifiableId"
+            ],
+            "subject": "did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p",
+            "challenge": "d2366e33-feb3-4cdf-be5f-ef5f07465588"
+        }],
+        "proof": {
+            "type": "Ed25519Signature2018",
+            "creator": "did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p",
+            "created": "2022-01-26T14:05:49Z",
+            "domain": "https://api.preprod.ebsi.eu",
+            "proofPurpose": "authentication",
+            "verificationMethod": "did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p#z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p",
+            "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..-D6b500AU7P69ZE_JggmNnebuiMjZ-59DIGm1KBLNesNSJEUgIaK6XczOqoM_eXidwZjCVuCAl4waKfftN4TAg",
+            "nonce": "5a75dedc-01c2-4432-b3e8-28d646e71f46"
+        },
+        "issuanceDate": null,
+        "validFrom": null,
+        "expirationDate": null,
+        "json": "{\r\n  \"@context\" : [ \"https://www.w3.org/2018/credentials/v1\" ],\r\n  \"holder\" : \"did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p\",\r\n  \"id\" : \"urn:uuid:e394bd68-80d2-4f5d-b9de-e0d317932909\",\r\n  \"type\" : [ \"VerifiablePresentation\" ],\r\n  \"verifiableCredential\" : [ {\r\n    \"@context\" : [ \"https://www.w3.org/2018/credentials/v1\" ],\r\n    \"credentialSchema\" : {\r\n      \"id\" : \"https://api.preprod.ebsi.eu/trusted-schemas-registry/v1/schemas/0x2488fd38783d65e4fd46e7889eb113743334dbc772b05df382b8eadce763101b\",\r\n      \"type\" : \"JsonSchemaValidator2018\"\r\n    },\r\n    \"credentialSubject\" : {\r\n      \"currentAddress\" : \"1 Boulevard de la Liberté, 59800 Lille\",\r\n      \"dateOfBirth\" : \"1993-04-08\",\r\n      \"familyName\" : \"DOE\",\r\n      \"firstName\" : \"Jane\",\r\n      \"gender\" : \"FEMALE\",\r\n      \"id\" : \"did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p\",\r\n      \"nameAndFamilyNameAtBirth\" : \"Jane DOE\",\r\n      \"personalIdentifier\" : \"0904008084H\",\r\n      \"placeOfBirth\" : \"LILLE, FRANCE\"\r\n    },\r\n    \"evidence\" : {\r\n      \"documentPresence\" : [ \"Physical\" ],\r\n      \"evidenceDocument\" : [ \"Passport\" ],\r\n      \"subjectPresence\" : \"Physical\",\r\n      \"type\" : [ \"DocumentVerification\" ],\r\n      \"verifier\" : \"did:ebsi:2A9BZ9SUe6BatacSpvs1V5CdjHvLpQ7bEsi2Jb6LdHKnQxaN\"\r\n    },\r\n    \"id\" : \"identity#VerifiableId#b97d1435-4f8d-4bd9-aaa3-4f407bdf6794\",\r\n    \"issuanceDate\" : \"2022-01-25T16:15:35.776314851Z\",\r\n    \"issuer\" : \"did:key:z6MktSzJ2iEpSH2SZ8qhBNkyDNNJdr1gCznaEf5tRLiCMQoN\",\r\n    \"proof\" : {\r\n      \"created\" : \"2022-01-25T16:15:35Z\",\r\n      \"creator\" : \"did:key:z6MktSzJ2iEpSH2SZ8qhBNkyDNNJdr1gCznaEf5tRLiCMQoN\",\r\n      \"domain\" : \"https://api.preprod.ebsi.eu\",\r\n      \"jws\" : \"eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..MDp_eJgqtSsjCJEOkzNKy_TQ83TzjPrSkEAGmMBhikJt03VMiDgz-n3jf3P0WjZ0Ap3yHs4zZfo-cryZuayQCg\",\r\n      \"nonce\" : \"d2366e33-feb3-4cdf-be5f-ef5f07465588\",\r\n      \"type\" : \"Ed25519Signature2018\"\r\n    },\r\n    \"validFrom\" : \"2022-01-25T16:15:35.776320030Z\",\r\n    \"type\" : [ \"VerifiableCredential\", \"VerifiableAttestation\", \"VerifiableId\" ]\r\n  } ],\r\n  \"proof\" : {\r\n    \"type\" : \"Ed25519Signature2018\",\r\n    \"creator\" : \"did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p\",\r\n    \"created\" : \"2022-01-26T14:05:49Z\",\r\n    \"domain\" : \"https://api.preprod.ebsi.eu\",\r\n    \"nonce\" : \"5a75dedc-01c2-4432-b3e8-28d646e71f46\",\r\n    \"proofPurpose\" : \"authentication\",\r\n    \"verificationMethod\" : \"did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p#z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p\",\r\n    \"jws\" : \"eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..-D6b500AU7P69ZE_JggmNnebuiMjZ-59DIGm1KBLNesNSJEUgIaK6XczOqoM_eXidwZjCVuCAl4waKfftN4TAg\"\r\n  }\r\n}",
+        "dateFormat": {
+            "locale": "en_US",
+            "decimalStyle": {
+                "zeroDigit": "0",
+                "positiveSign": "+",
+                "negativeSign": "-",
+                "decimalSeparator": "."
+            },
+            "resolverStyle": "STRICT",
+            "resolverFields": null,
+            "zone": null,
+            "chronology": null
+        },
+        "jwt": null,
+        "type": [
+            "VerifiablePresentation"
+        ],
+        "subject": "did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p",
+        "issuer": "did:key:z6MkkghNbcbCCqkLzJYnob5n9rpFRgmup8qZDkHYem1kmW3p",
+        "credentialSchema": null,
+        "challenge": "5a75dedc-01c2-4432-b3e8-28d646e71f46"
+    }
+}
