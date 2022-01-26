@@ -10,15 +10,15 @@
             <h2 class="fw-bold">
               presented credentials.
             </h2>
-            <div class="accordion mt-4" id="accordion1" v-for="data in protectedData.vp_token.verifiableCredential" v-bind:key="data.id">
+            <div class="accordion my-2" id="accordion1" v-for="data in protectedData.vp_token.verifiableCredential" v-bind:key="data.id">
               <div class="accordion-item">
-                <h2 class="accordion-header" :id="data.id">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="data.id" aria-expanded="false" v-bind:aria-controls="data.id">
-                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                <h2 class="accordion-header" :id="'heading'+protectedData.vp_token.verifiableCredential.indexOf(data)">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)" aria-expanded="false" :aria-controls="'collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)">
+                     <i class="bi bi-check-circle-fill text-primary me-2"></i>
                     {{data.type[data.type.length-1]}}
                   </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" v-bind:aria-labelledby="data.id" data-bs-parent="#accordionExample">
+                <div :id="'collapse'+protectedData.vp_token.verifiableCredential.indexOf(data)" class="accordion-collapse collapse" :aria-labelledby="'heading'+protectedData.vp_token.verifiableCredential.indexOf(data)" data-bs-parent="#accordionExample">
                   <div class="accordion-body text-start">
                     <span>
                       <i class="bi bi-check"></i>
@@ -59,10 +59,7 @@
                       <i class="bi bi-check"></i>
                       Gender: {{data.credentialSubject.gender}}
                     </span>
-                    <br>
-                    <span>
-                     <a href="#" class="text-dark">View credential</a>
-                    </span>
+
                   </div>
                 </div>
               </div>
