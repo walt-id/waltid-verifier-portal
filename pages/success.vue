@@ -95,7 +95,7 @@ export default {
   async asyncData ({ $axios, route }) {
     console.log(route.query.access_token)
     let result = {}
-    let protectedData = ''
+    let protectedData = {}
     if (route.query.access_token != null) {
       await $axios.get('/verifier-api/auth?access_token=' + route.query.access_token)
         .then((response) => {
@@ -111,7 +111,7 @@ export default {
         .then((dataResponse) => {
           console.log('dataResponse.data')
           console.log(dataResponse.data)
-          protectedData = dataResponse.data
+          protectedData = JSON.parse(dataResponse.data)
         })
         .catch((error) => {
           console.log(error)
