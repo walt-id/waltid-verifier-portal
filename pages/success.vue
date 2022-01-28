@@ -69,14 +69,14 @@
               <br>
               Verification Policies
               <br>
-              {{JSON.stringify(result.verification_result.policyResults)}}
+              {{JSON.stringify(result.verification_result.policyResults, undefined, 2)}}
             </div>
             <div v-else class="alert alert-danger mt-4" role="alert">
               <strong>The verification failed</strong>
               <br>
               Verification Policies
               <br>
-              {{JSON.stringify(result.verification_result.policyResults)}}
+              {{JSON.stringify(result.verification_result.policyResults, undefined, 2)}}
             </div>
             <div class="alert alert-secondary mt-4" role="alert">
               Authenticated session established
