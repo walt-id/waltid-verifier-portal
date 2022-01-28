@@ -65,11 +65,18 @@
               </div>
             </div>
             <div v-if="result.verification_result.valid" class="alert alert-success mt-4" role="alert">
-              The verification was successful
-
+              <strong>The verification was successful</strong>
+              <br>
+              Verification Policies
+              <br>
+              {{JSON.stringify(result.verification_result.policyResults)}}
             </div>
             <div v-else class="alert alert-danger mt-4" role="alert">
-              The verification failed
+              <strong>The verification failed</strong>
+              <br>
+              Verification Policies
+              <br>
+              {{JSON.stringify(result.verification_result.policyResults)}}
             </div>
             <div class="alert alert-secondary mt-4" role="alert">
               Authenticated session established
