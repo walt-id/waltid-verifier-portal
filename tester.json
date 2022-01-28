@@ -1,4 +1,7 @@
 {
+    "verification_result": {
+        "valid": true
+    },
     "vp_token": {
         "context": ["https://www.w3.org/2018/credentials/v1"],
         "id": "urn:uuid:e394bd68-80d2-4f5d-b9de-e0d317932909",

@@ -7,7 +7,7 @@
             <h2 class="fw-normal">
               Thanks, you just
             </h2>
-            <h2 class="fw-bold">
+            <h2 class="fw-bold mb-2">
               presented credentials.
             </h2>
             <div class="accordion my-2" id="accordion1" v-for="data in result.vp_token.verifiableCredential" v-bind:key="data.id">
@@ -64,17 +64,26 @@
                 </div>
               </div>
             </div>
+            <div v-if="result.verification_result.valid" class="alert alert-success mt-4" role="alert">
+              The verification was successful
+
+            </div>
+            <div v-else class="alert alert-danger mt-4" role="alert">
+              The verification failed
+            </div>
             <div class="alert alert-secondary mt-4" role="alert">
               Authenticated session established
               <br>
               <span>
                 <i class="bi bi-dot"></i>
-                <a href="#" class="text-dark">View authenticated  DID</a>
+                <a href="#" v-if="authenticatedDID === 'View authenticated DID'" class="text-dark" @click="viewAuthenticatedDID">View authenticated DID</a>
+                <a href="#" v-else class="text-dark" @click="viewAuthenticatedDID">{{authenticatedDID.slice(0,30)}}...</a>
               </span>
               <br>
               <span>
                 <i class="bi bi-dot"></i>
-                <a href="#" class="text-dark">View session token</a>
+                <a href="#" v-if="access_token === 'View session token'" class="text-dark" @click="viewSessionToken">View session token</a>
+                <a href="#" v-else class="text-dark" @click="viewSessionToken">{{access_token.slice(0,30)}}...</a>
               </span>
             </div>
             <p class="text-muted fw-bold mt-5">© 2022 walt.id</p>
@@ -92,6 +101,12 @@ if (window.opener != null) {
 }
 export default {
   name: 'success.vue',
+  data (){
+    return{
+      access_token:  'View session token',
+      authenticatedDID: 'View authenticated DID'
+    }
+  },
   async asyncData ({ $axios, route }) {
     console.log(route.query.access_token)
     let result = {}
@@ -115,6 +130,14 @@ export default {
         })
     }
     return { result, protectedData }
+  },
+  methods:{
+    viewSessionToken (){
+      this.access_token = this.result.auth_token;
+    },
+    viewAuthenticatedDID(){
+      this.authenticatedDID = this.result.subject
+    }
   }
 }
 </script>
