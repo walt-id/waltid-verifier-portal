@@ -52,7 +52,10 @@ export default {
   },
 
   proxy: {
-    '/verifier-api/': 'https://wallet.waltid.org'
+    // '/verifier-api/': 'https://wallet.waltid.org',
+    // '/api/': 'https://wallet.waltid.org'
+     '/verifier-api/': 'http://localhost:8080/',
+     '/api/': 'http://localhost:8080/'
   },
 
 
