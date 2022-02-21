@@ -77,12 +77,12 @@
                       <br>
                       <span>
                         <i class="bi bi-check"></i>
-                         Given names: {{data.credentialSubject.givenNames}}
+                         Given names: {{data.credentialSubject.givenName}}
                       </span>
                       <br>
                       <span>
                         <i class="bi bi-check"></i>
-                        Date of birth: {{data.credentialSubject.dateOfBirth}}
+                        Date of birth: {{data.credentialSubject.birthDate}}
                       </span>
                       <br>
                       <span>
