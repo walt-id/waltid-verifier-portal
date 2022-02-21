@@ -63,8 +63,8 @@
                       </span>
                     </div>
 
-                    <!-- ParticipantCredential -->
-                    <div v-if="data.type[data.type.length-1] == 'ParticipantCredential'">
+                    <!-- EuropeanBankIdentity -->
+                    <div v-if="data.type[data.type.length-1] == 'EuropeanBankIdentity'">
                       <span>
                         <i class="bi bi-check"></i>
                         ID: {{data.credentialSubject.id}}
@@ -72,17 +72,27 @@
                       <br>
                       <span>
                         <i class="bi bi-check"></i>
-                        Program Name: {{data.credentialSubject.programName}}
+                        Family name: {{data.credentialSubject.familyName}}
                       </span>
                       <br>
                       <span>
                         <i class="bi bi-check"></i>
-                         Domain: {{data.credentialSubject.domain}}
+                         Given names: {{data.credentialSubject.givenNames}}
                       </span>
                       <br>
                       <span>
                         <i class="bi bi-check"></i>
-                        Ethereum Address: {{data.credentialSubject.ethereumAddress}}
+                        Date of birth: {{data.credentialSubject.dateOfBirth}}
+                      </span>
+                      <br>
+                      <span>
+                        <i class="bi bi-check"></i>
+                        Country of birth: {{data.credentialSubject.placeOfBirth.country}}
+                      </span>
+                      <br>
+                      <span>
+                        <i class="bi bi-check"></i>
+                        Locality of birth: {{data.credentialSubject.placeOfBirth.locality}}
                       </span>
                     </div>
 
