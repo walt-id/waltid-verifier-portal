@@ -16,6 +16,10 @@ export default {
     ]
   },
 
+  publicRuntimeConfig: {
+    copyright: process.env.COPYRIGHT || 'powered by walt.id'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "@/assets/css/bootstrap-icons.css"
