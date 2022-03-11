@@ -17,7 +17,7 @@
               <a :href="'/verifier-api/present/?walletId=' + wallets[0].id + '&schemaUri=' + vidSchemaUri" class="btn btn-primary my-2 fw-bold _btn">Connect Wallet using <b>Verifiable ID</b></a>
               <a :href="'/verifier-api/present/?walletId=' + wallets[0].id + '&schemaUri=' + bidSchemaUri" class="btn btn-success my-2 fw-bold _btn">Connect Wallet using <b>Bank ID</b></a>
             </p>
-            <p class="text-muted fw-bold">© 2022 walt.id</p>
+            <p class="text-muted fw-bold"> {{ $config.copyright }} </p>
           </div>
         </div>
       </section>
