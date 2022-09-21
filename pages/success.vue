@@ -10,111 +10,114 @@
             <h2 class="fw-bold mb-2">
               presented credentials.
             </h2>
-            <div class="accordion my-2" id="accordion1" v-for="data in result.vp_token.verifiableCredential" v-bind:key="data.id">
-              <div class="accordion-item">
-                <h2 class="accordion-header" :id="'heading'+result.vp_token.verifiableCredential.indexOf(data)">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+result.vp_token.verifiableCredential.indexOf(data)" aria-expanded="false" :aria-controls="'collapse'+result.vp_token.verifiableCredential.indexOf(data)">
-                     <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                    {{data.type[data.type.length-1]}}
-                  </button>
-                </h2>
-                <div :id="'collapse'+result.vp_token.verifiableCredential.indexOf(data)" class="accordion-collapse collapse" :aria-labelledby="'heading'+result.vp_token.verifiableCredential.indexOf(data)" data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-start">
-                    <!-- VerifiableId -->
-                    <div v-if="data.type[data.type.length-1] == 'VerifiableId'">
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Family Name: {{data.credentialSubject.familyName}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        First Name: {{data.credentialSubject.firstName}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                         Date Of Birth: {{data.credentialSubject.dateOfBirth}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Personal Identifier: {{data.credentialSubject.personalIdentifier}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Name At Birth: {{data.credentialSubject.nameAndFamilyNameAtBirth}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Place Of Birth: {{data.credentialSubject.placeOfBirth}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Current Address: {{data.credentialSubject.currentAddress}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Gender: {{data.credentialSubject.gender}}
-                      </span>
-                    </div>
+            <div v-for="(vp_result, vp_idx) in result.vps" :key="vp_idx">
+              <b>{{vp_idx+1}}. Verifiable Presentation:</b>
+              <div class="accordion my-2" id="accordion1" v-for="data in vp_result.vp.verifiableCredential" v-bind:key="data.id">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" :id="'heading'+vp_result.vp.verifiableCredential.indexOf(data)">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+vp_result.vp.verifiableCredential.indexOf(data)" aria-expanded="false" :aria-controls="'collapse'+vp_result.vp.verifiableCredential.indexOf(data)">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      {{data.type[data.type.length-1]}}
+                    </button>
+                  </h2>
+                  <div :id="'collapse'+vp_result.vp.verifiableCredential.indexOf(data)" class="accordion-collapse collapse" :aria-labelledby="'heading'+vp_result.vp.verifiableCredential.indexOf(data)" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-start">
+                      <!-- VerifiableId -->
+                      <div v-if="data.type[data.type.length-1] == 'VerifiableId'">
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Family Name: {{data.credentialSubject.familyName}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          First Name: {{data.credentialSubject.firstName}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Date Of Birth: {{data.credentialSubject.dateOfBirth}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Personal Identifier: {{data.credentialSubject.personalIdentifier}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Name At Birth: {{data.credentialSubject.nameAndFamilyNameAtBirth}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Place Of Birth: {{data.credentialSubject.placeOfBirth}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Current Address: {{data.credentialSubject.currentAddress}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Gender: {{data.credentialSubject.gender}}
+                        </span>
+                      </div>
 
-                    <!-- EuropeanBankIdentity -->
-                    <div v-if="data.type[data.type.length-1] == 'EuropeanBankIdentity'">
-                      <span>
-                        <i class="bi bi-check"></i>
-                        ID: {{data.credentialSubject.id}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Family name: {{data.credentialSubject.familyName}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                         Given names: {{data.credentialSubject.givenName}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Date of birth: {{data.credentialSubject.birthDate}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Country of birth: {{data.credentialSubject.placeOfBirth.country}}
-                      </span>
-                      <br>
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Locality of birth: {{data.credentialSubject.placeOfBirth.locality}}
-                      </span>
-                    </div>
+                      <!-- EuropeanBankIdentity -->
+                      <div v-if="data.type[data.type.length-1] == 'EuropeanBankIdentity'">
+                        <span>
+                          <i class="bi bi-check"></i>
+                          ID: {{data.credentialSubject.id}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Family name: {{data.credentialSubject.familyName}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Given names: {{data.credentialSubject.givenName}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Date of birth: {{data.credentialSubject.birthDate}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Country of birth: {{data.credentialSubject.placeOfBirth.country}}
+                        </span>
+                        <br>
+                        <span>
+                          <i class="bi bi-check"></i>
+                          Locality of birth: {{data.credentialSubject.placeOfBirth.locality}}
+                        </span>
+                      </div>
 
+                    </div>
                   </div>
                 </div>
               </div>
+              <div v-if="vp_result.verification_result.valid" class="alert alert-success mt-4" role="alert">
+                <strong>The verification was successful</strong>
+                <br>
+                Verification Policies
+                <br>
+                {{JSON.stringify(vp_result.verification_result.policyResults, undefined, 2)}}
+              </div>
+              <div v-else class="alert alert-danger mt-4" role="alert">
+                <strong>The verification failed</strong>
+                <br>
+                Verification Policies
+                <br>
+                {{JSON.stringify(vp_result.verification_result.policyResults, undefined, 2)}}
+              </div>
             </div>
-            <div v-if="result.verification_result.valid" class="alert alert-success mt-4" role="alert">
-              <strong>The verification was successful</strong>
-              <br>
-              Verification Policies
-              <br>
-              {{JSON.stringify(result.verification_result.policyResults, undefined, 2)}}
-            </div>
-            <div v-else class="alert alert-danger mt-4" role="alert">
-              <strong>The verification failed</strong>
-              <br>
-              Verification Policies
-              <br>
-              {{JSON.stringify(result.verification_result.policyResults, undefined, 2)}}
-            </div>
-            <div v-if="result.verification_result.valid" class="alert alert-secondary mt-4" role="alert">
+            <div v-if="result.isValid" class="alert alert-secondary mt-4" role="alert">
               Authenticated session established
               <br>
               <span>
