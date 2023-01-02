@@ -10,23 +10,23 @@
 
           <div v-for="(vp_result, vp_idx) in result.vps" :key="vp_idx">
             <b>{{ vp_idx + 1 }}. Verifiable Presentation:</b>
-            <div v-for="data in vp_result.vp.verifiableCredential" id="accordion1" v-bind:key="data.id"
+            <div v-for="data in vp_result.vcs" id="accordion1" v-bind:key="data.id"
               class="accordion my-2">
               <div class="accordion-item">
                 <h2 :id="
                     'heading' +
-                        vp_result.vp.verifiableCredential.indexOf(
+                        vp_result.vcs.indexOf(
                             data
                         )
                 " class="accordion-header">
                   <button :aria-controls="
                       'collapse' +
-                          vp_result.vp.verifiableCredential.indexOf(
+                          vp_result.vcs.indexOf(
                               data
                           )
                   " :data-bs-target="
                       '#collapse' +
-                          vp_result.vp.verifiableCredential.indexOf(
+                          vp_result.vcs.indexOf(
                               data
                           )
                   " aria-expanded="false" class="accordion-button collapsed" data-bs-toggle="collapse" type="button">
@@ -36,12 +36,12 @@
                 </h2>
                 <div :id="
                     'collapse' +
-                        vp_result.vp.verifiableCredential.indexOf(
+                        vp_result.vcs.indexOf(
                             data
                         )
                 " :aria-labelledby="
                     'heading' +
-                        vp_result.vp.verifiableCredential.indexOf(
+                        vp_result.vcs.indexOf(
                             data
                         )
                 " class="accordion-collapse collapse" data-bs-parent="#accordionExample">
