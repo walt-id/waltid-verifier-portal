@@ -17,15 +17,15 @@
                         <p class="lead text-muted">
                             Connect your wallet and share<br>your credentials to access services. </p>
                         <p>
-                            <a :href="'/verifier-api/present/?walletId=' + wallets[0].id + '&schemaUri=' + vidSchemaUri + '&ui=http://foo'"
+                            <a :href="getPresentationUrl(wallets[0].id, vidSchemaUri)"
                                 class="btn btn-primary my-2 fw-bold _btn">Connect Wallet using <b>Verifiable ID</b></a>
                                 <a :href="'/xdevice/' + encodeURIComponent(vidSchemaUri)"
                                     class="btn btn-primary my-2 fw-bold _btn"><i class="bi bi-upc-scan" /></a>
 
-                            <a :href="'/verifier-api/present/?walletId=' + wallets[0].id + '&schemaUri=' + vidSchemaUri1 + '&ui=http://foo'"
+                            <a :href="getPresentationUrl(wallets[0].id, vidSchemaUri1)"
                                 class="btn btn-primary my-2 fw-bold _btn">Connect Wallet using <b>Open Badge Credential</b></a>
 
-                            <a :href="'/verifier-api/present/?walletId=' + wallets[0].id + '&schemaUri=' + bidSchemaUri"
+                            <a :href="getPresentationUrl(wallets[0].id, bidSchemaUri)"
                                 class="btn btn-success my-2 fw-bold _btn">Connect Wallet using <b>Bank ID</b></a>
                         </p>
                         <p class="text-muted fw-bold">© 2022 walt.id</p>
@@ -37,21 +37,25 @@
 </template>
 
 <script>
+import { config } from "../config";
 export default {
     data() {
         return {
-            vidSchemaUri1: "https://ngiatlantic.info/schema/V-2022-1/OpenBadgeCredential.json",
+            vidSchemaUri1: "https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json",
             vidSchemaUri: 'https://api.preprod.ebsi.eu/trusted-schemas-registry/v1/schemas/0xb77f8516a965631b4f197ad54c65a9e2f9936ebfb76bae4906d33744dbcc60ba',
             bidSchemaUri: 'https://raw.githubusercontent.com/walt-id/waltid-ssikit-vclib/master/src/test/resources/schemas/EuropeanBankIdentity.json'
         }
     },
     async asyncData({ $axios }) {
-        const wallets = await $axios.$get('/verifier-api/wallets/list')
+        const wallets = await $axios.$get(`/verifier-api/${config.tenantId}/wallets/list`)
         return { wallets }
     },
     methods: {
         encodeURIComponent(str) {
             return encodeURIComponent(str)
+        },
+        getPresentationUrl(walletId, schemaUri) {
+            return `/verifier-api/${config.tenantId}/present/?walletId=${walletId}&schemaUri=${schemaUri}`
         }
     }
 }

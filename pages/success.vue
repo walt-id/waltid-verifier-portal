@@ -297,6 +297,7 @@
 </template>
 
 <script>
+import { config } from "../config";
 if (window.opener != null) {
   window.opener.location = window.location;
   window.close();
@@ -315,14 +316,11 @@ export default {
     let protectedData = {};
     if (route.query.access_token != null) {
       await $axios
-        .get(
-          "/verifier-api/auth?access_token=" +
-          route.query.access_token
-        )
+        .get(`/verifier-api/${config.tenantId}/auth?access_token=${route.query.access_token}`)
         .then(response => {
           result = response.data;
           console.log(response.data);
-          return $axios.get("/verifier-api/protected", {
+          return $axios.get(`/verifier-api/${config.tenantId}/protected`, {
             headers: {
               Authorization: "Bearer " + result.auth_token
             }
