@@ -21,13 +21,14 @@
 
 <script>
 import QRious from "qrious"
+import { config } from "../../config";
 
 export default {
     async asyncData({$axios, route}) {
-        const requestInfo = await $axios.$get('/verifier-api/presentXDevice?schemaUri=' + route.params.schemaUri)
+        const requestInfo = await $axios.$get(`/verifier-api/${config.tenantId}/presentXDevice?schemaUri=${route.params.schemaUri}`)
 
         let reqTimer = setInterval(async () => {
-            let response = await fetch("/verifier-api/verify/isVerified?state=" + requestInfo.requestId);
+            let response = await fetch(`/verifier-api/${config.tenantId}/verify/isVerified?state=${requestInfo.requestId}`);
 
             if (response.status === 200) {
                 window.clearTimeout(reqTimer);
