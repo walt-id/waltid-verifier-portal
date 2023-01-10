@@ -26,6 +26,9 @@ export default {
         '@/plugins/bootstrap',
         '@/plugins/bootstrap-script'
     ],
+    publicRuntimeConfig: {
+        copyright: process.env.COPYRIGHT || 'powered by walt.id'
+    },
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -50,10 +53,10 @@ export default {
     },
 
     proxy: {
-        // '/verifier-api/': 'https://wallet.waltid.org',
-        // '/api/': 'https://wallet.waltid.org'
-        '/verifier-api/': 'http://localhost:8080/',
-        '/api/': 'http://localhost:8080/'
+        '/verifier-api/': 'https://wallet.walt-test.cloud',
+        '/api/': 'https://wallet.walt-test.cloud'
+        //'/verifier-api/': 'http://localhost:8080/',
+        //'/api/': 'http://localhost:8080/'
     },
 
 
