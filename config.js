@@ -15,6 +15,6 @@ const config = {
         connections: false
     },
     home: "/Credentials",
-    tenantId: "default"
+    tenantId: "iota"
 }
 export{config}
