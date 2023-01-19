@@ -13,20 +13,14 @@
                         <h2 class="fw-normal">
                             Welcome to the </h2>
                         <h2 class="fw-bold">
-                            Demo Verifier Portal </h2>
+                            IOTA Demo Verifier Portal </h2>
                         <p class="lead text-muted">
-                            Connect your wallet and share<br>your credentials to access services. </p>
+                            Authenticate yourself via sharing a W3C Verifiable Credential bound to your IOTA DID. </p>
                         <p>
                             <a :href="getPresentationUrl(wallets[0].id, vidType)"
-                                class="btn btn-primary my-2 fw-bold _btn">Connect Wallet using <b>Verifiable ID</b></a>
+                                class="btn btn-primary my-2 fw-bold _btn">Login with <b>IOTA</b></a>
                                 <a :href="'/xdevice/' + encodeURIComponent(vidType)"
                                     class="btn btn-primary my-2 fw-bold _btn"><i class="bi bi-upc-scan" /></a>
-
-                            <a :href="getPresentationUrl(wallets[0].id, obcType)"
-                                class="btn btn-primary my-2 fw-bold _btn">Connect Wallet using <b>Open Badge Credential</b></a>
-
-                            <a :href="getPresentationUrl(wallets[0].id, bidType)"
-                                class="btn btn-success my-2 fw-bold _btn">Connect Wallet using <b>Bank ID</b></a>
                         </p>
                         <p class="text-muted fw-bold"> {{ $config.copyright }} </p>
                     </div>
