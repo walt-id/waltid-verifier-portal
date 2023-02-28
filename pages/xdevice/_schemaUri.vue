@@ -25,7 +25,7 @@ import { config } from "../../config";
 
 export default {
     async asyncData({$axios, route}) {
-        const requestInfo = await $axios.$get(`/verifier-api/${config.tenantId}/presentXDevice?schemaUri=${route.params.schemaUri}`)
+        const requestInfo = await $axios.$get(`/verifier-api/${config.tenantId}/presentXDevice?vcType=${route.params.schemaUri}`)
 
         let reqTimer = setInterval(async () => {
             let response = await fetch(`/verifier-api/${config.tenantId}/verify/isVerified?state=${requestInfo.requestId}`);
