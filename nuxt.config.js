@@ -1,7 +1,7 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'waltid-verifier-portal',
+        title: 'NEOM employer',
         htmlAttrs: {
             lang: 'en'
         },
