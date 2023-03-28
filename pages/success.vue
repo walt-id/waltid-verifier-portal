@@ -6,7 +6,7 @@
           <img src="/favicon.png" />
 
           <h2 class="fw-normal">Thanks, you just</h2>
-          <h2 class="fw-bold mb-2">presented credentials.</h2>
+          <h2 class="fw-bold mb-2">applied to your dream job.</h2>
 
           <div v-for="(vp_result, vp_idx) in result.vps" :key="vp_idx">
             <b>{{ vp_idx + 1 }}. Verifiable Presentation:</b>
