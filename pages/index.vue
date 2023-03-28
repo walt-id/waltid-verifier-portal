@@ -2,7 +2,7 @@
     <div>
         <header>
             <Notice
-                text="In practice the verifier would verify the credential(s) and eventually provide access to products and services">
+                text="Job application deadline is: 01.01.2025">
             </Notice>
         </header>
         <main class="_home d-flex justify-content-centr align-items-center">
@@ -13,9 +13,9 @@
                         <h2 class="fw-normal">
                             Welcome to the </h2>
                         <h2 class="fw-bold">
-                            Demo Verifier Portal </h2>
+                             NEOM company job application board</h2>
                         <p class="lead text-muted">
-                            Connect your wallet and share<br>your credentials to access services. </p>
+                            Connect your wallet and share<br>your credentials to apply for the job offering. </p>
                         <p>
                             <a :href="getPresentationUrl(wallets[0].id, vidType)"
                                 class="btn btn-primary my-2 fw-bold _btn">Connect Wallet using <b>Verifiable ID</b></a>
@@ -24,9 +24,6 @@
 
                             <a :href="getPresentationUrl(wallets[0].id, obcType)"
                                 class="btn btn-primary my-2 fw-bold _btn">Connect Wallet using <b>Open Badge Credential</b></a>
-
-                            <a :href="getPresentationUrl(wallets[0].id, bidType)"
-                                class="btn btn-success my-2 fw-bold _btn">Connect Wallet using <b>Bank ID</b></a>
                         </p>
                         <p class="text-muted fw-bold"> {{ $config.copyright }} </p>
                     </div>
