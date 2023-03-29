@@ -9,7 +9,7 @@
             <section class="py-5 text-center container">
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
-                        <img src="/favicon.png" alt="Logo" />
+                        <img src="/favicon.png" alt="Logo" style="background: radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(255,255,255,1) 100%)" />
                         <h2 class="fw-normal">
                             Welcome to the </h2>
                         <h2 class="fw-bold">
