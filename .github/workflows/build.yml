@@ -7,7 +7,6 @@ on:
       - '*/*'
       - '**'
       - '!main'
-      - '!master'
 
 jobs:
   ci:
