@@ -230,6 +230,93 @@
                         }}
                       </span>
                     </div>
+
+                    <!-- Europass -->
+                    <div v-if="
+                        data.type[
+                            data.type.length - 1
+                        ] == 'Europass'
+                    ">
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>ID:</b>
+                        {{ data.credentialSubject.id }}
+                      </span>
+                      <br />
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>Student ID:</b>
+                        {{
+                        data.credentialSubject
+                        .identifier[0].value
+                        }}
+                      </span>
+                      <br />
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>Achievement:</b>
+                        {{
+                        data.credentialSubject
+                        .achieved[0].title
+                        }}
+                      </span>
+                      <br />
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>Grade:</b>
+                        {{
+                        data.credentialSubject
+                        .achieved[0].wasDerivedFrom[0].grade
+                        }}
+                      </span>
+                      <br />
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>Awarded by:</b>
+                        {{
+                        data.credentialSubject
+                        .achieved[0].wasAwardedBy.awardingBody[0]
+                        }}
+                      </span>
+                      <br />
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>Awarding location:</b>
+                        {{
+                        data.credentialSubject
+                        .achieved[0].wasAwardedBy.awardingLocation
+                        }}
+                      </span>
+                      <br />
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>Awarding date:</b>
+                        {{
+                        data.credentialSubject
+                        .achieved[0].wasAwardedBy.awardingDate
+                        }}
+                      </span>
+
+                      <br />
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: inline-block;">
+                        <i class="bi bi-check"></i>
+                        <b>Entitles to:</b>
+                        {{
+                        data.credentialSubject
+                        .entitledTo[0].title
+                        }}
+                      </span>
+
+                      <br />
+                      <span>
+                        <i class="bi bi-check"></i>
+                        <b>Entitlement description:</b>
+                        {{
+                        data.credentialSubject
+                        .entitledTo[0].definition
+                        }}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -238,24 +325,25 @@
               <strong>The verification was successful</strong>
               <br />
               Verification Policies <br />
-              {{
+              <pre>{{
               JSON.stringify(
               vp_result.verification_result.policyResults,
               undefined,
               2
               )
-              }}
+              }}</pre>
             </div>
             <div v-else class="alert alert-danger mt-4" role="alert">
               <strong>The verification failed</strong> <br />
               Verification Policies <br />
-              {{
+              <pre>{{
               JSON.stringify(
               vp_result.verification_result.policyResults,
               undefined,
               2
               )
               }}
+              </pre>
             </div>
           </div>
           <div v-if="result.isValid" class="alert alert-secondary mt-4" role="alert">
