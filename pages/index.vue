@@ -42,7 +42,7 @@ export default {
     data() {
         return {
             obcType: "OpenBadgeCredential",
-            vidType: 'VerifiableId',
+            vidType: 'StudentId',
             bidType: 'EuropeanBankIdentity'
         }
     },

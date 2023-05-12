@@ -53,10 +53,10 @@ export default {
     },
 
     proxy: {
-        //'/verifier-api/': 'https://wallet.walt-test.cloud',
-        //'/api/': 'https://wallet.walt-test.cloud'
-        '/verifier-api/': 'http://localhost:8080/',
-        '/api/': 'http://localhost:8080/'
+        '/verifier-api/': 'https://wallet.walt-test.cloud',
+        '/api/': 'https://wallet.walt-test.cloud'
+        // '/verifier-api/': 'http://localhost:8080/',
+        // '/api/': 'http://localhost:8080/'
     },
 
 

@@ -46,39 +46,12 @@
                         )
                 " class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                   <div class="accordion-body text-start">
-                    <!-- VerifiableId -->
+                    <!-- StudentId -->
                     <div v-if="
                         data.type[
                             data.type.length - 1
-                        ] == 'VerifiableId'
+                        ] == 'StudentId'
                     ">
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Family Name:
-                        {{
-                        data.credentialSubject
-                        .familyName
-                        }}
-                      </span>
-                      <br />
-                      <span>
-                        <i class="bi bi-check"></i>
-                        First Name:
-                        {{
-                        data.credentialSubject
-                        .firstName
-                        }}
-                      </span>
-                      <br />
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Date Of Birth:
-                        {{
-                        data.credentialSubject
-                        .dateOfBirth
-                        }}
-                      </span>
-                      <br />
                       <span>
                         <i class="bi bi-check"></i>
                         Personal Identifier:
@@ -88,41 +61,6 @@
                         }}
                       </span>
                       <br />
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Name At Birth:
-                        {{
-                        data.credentialSubject
-                        .nameAndFamilyNameAtBirth
-                        }}
-                      </span>
-                      <br />
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Place Of Birth:
-                        {{
-                        data.credentialSubject
-                        .placeOfBirth
-                        }}
-                      </span>
-                      <br />
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Current Address:
-                        {{
-                        data.credentialSubject
-                        .currentAddress
-                        }}
-                      </span>
-                      <br />
-                      <span>
-                        <i class="bi bi-check"></i>
-                        Gender:
-                        {{
-                        data.credentialSubject
-                        .gender
-                        }}
-                      </span>
                     </div>
                     <!-- OpenBadgeCredential -->
                     <div div v-if="

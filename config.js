@@ -15,6 +15,6 @@ const config = {
         connections: false
     },
     home: "/Credentials",
-    tenantId: "neom-eu-verifier"
+    tenantId: "howest"
 }
 export{config}
