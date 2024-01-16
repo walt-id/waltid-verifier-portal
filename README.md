@@ -1,5 +1,13 @@
 # waltid-verifier-portal
 
+__Important__: Please be informed that the Issuer portal has been deprecated and no longer receives updates. 
+
+However, all functionalities offered by the Issuer Portal are now available via the new walt.id portal that combines both issuance and verification. You can find it in the walt.id identity repo.
+
+For any clarification or questions, feel free to contact us.
+
+---
+
 [![CI/CD Workflow for Walt.ID Verifier Portal](https://github.com/walt-id/waltid-verifier-portal/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/walt-id/waltid-verifier-portal/actions/workflows/ci.yml)
 
 A simple reference implementation for a Verifier Portal, leveraging the verifier backend API implemented in: https://github.com/walt-id/waltid-wallet-backend
